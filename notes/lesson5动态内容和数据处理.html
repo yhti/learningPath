@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 5 - Dynamic Content and Data Handling</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #dataList {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lesson 5: Dynamic Content and Data Handling</h1>
+    </header>
+    <section>
+        <h2>Data List</h2>
+        <button id="loadData">Load Data</button>
+        <ul id="dataList">
+            <!-- Data will be dynamically inserted here -->
+        </ul>
+    </section>
+    <script>
+        document.getElementById('loadData').addEventListener('click', function() {
+            const data = [
+                'Item 1: Data A',
+                'Item 2: Data B',
+                'Item 3: Data C'
+            ];
+
+            const list = document.getElementById('dataList');
+            list.innerHTML = ''; // Clear previous content
+
+            data.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = item;
+                list.appendChild(listItem);
+            });
+        });
+    </script>
+    <footer>
+        <p>Handling and displaying dynamic data.</p>
+    </footer>
+</body>
+</html>

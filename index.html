@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 1 - Learning Records</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>My Learning Records</h1>
+    </header>
+    <section>
+        <p>Click on the links below to view each lesson's notes:</p>
+        <ul id="notes-list">
+            <!-- Links will be inserted here by JavaScript -->
+        </ul>
+    </section>
+
+    <section>
+        <h2>JavaScript Learning Files</h2>
+        <p>Click on the links below to view each JavaScript lesson's notes:</p>
+        <ul id="js-notes-list">
+            <!-- Links to JavaScript notes will be inserted here by JavaScript -->
+        </ul>
+    </section>
+
+    <script>
+        // Array containing the names of the notes
+        const notes = [
+            'lesson1.html',
+            'lesson2表单和输入.html',
+            'lesson3CSS样式和布局.html',
+            'lesson4-JavaScript交互.html',
+            'lesson5动态内容和数据处理.html'
+            // Add more file names here as needed
+        ];
+        // Array containing the names of the JavaScript notes
+        const jsNotes = [
+            'lesson1.js',
+            'lesson2.js',
+            'lesson3.js',
+            'lesson4.js'
+            // Add more file names here as needed
+        ];
+
+
+        /*
+        // Get the UL element where the links will be inserted
+        const notesList = document.getElementById('notes-list');
+        
+        // Iterate over the notes array and create list items with links
+        notes.forEach(note => {
+            const listItem = document.createElement('li');
+            const link = document.createElement('a');
+            link.href = `notes/${note}`;
+            link.textContent = note.replace('.html', '');
+            link.target = '_blank';
+            listItem.appendChild(link);
+            notesList.appendChild(listItem);
+        });
+        */
+       // Function to create list items with links
+       function generateLinks(fileArray, listId, folder) {
+            const list = document.getElementById(listId);
+            fileArray.forEach(file => {
+                const listItem = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = `${folder}/${file}`;
+                link.textContent = file.replace('.html', '').replace('.js', '');
+                link.target = '_blank';
+                listItem.appendChild(link);
+                list.appendChild(listItem);
+            });
+        }
+
+        // Generate HTML notes links
+        generateLinks(htmlNotes, 'html-notes-list', 'notes');
+
+        // Generate JavaScript notes links
+        generateLinks(jsNotes, 'js-notes-list', 'js-notes');
+    </script>
+</body>
+</html>

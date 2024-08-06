@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 4 - JavaScript Interaction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #message {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lesson 4: JavaScript Interaction</h1>
+    </header>
+    <section>
+        <h2>Click the Button</h2>
+        <button id="clickMe">Click Me!</button>
+        <p id="message"></p>
+    </section>
+    <script>
+        document.getElementById('clickMe').addEventListener('click', function() {
+            document.getElementById('message').textContent = 'Button was clicked!';
+        });
+    </script>
+    <footer>
+        <p>Adding interactivity with JavaScript.</p>
+    </footer>
+</body>
+</html>
